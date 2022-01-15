@@ -6,11 +6,17 @@ import { Doctor } from '../doctor';
   providedIn: 'root'
 })
 export class DoctorsService {
-  private baseUrl = "http://localhost:8081/doctors"
+  private baseUrl = "http://localhost:8081/doctors";
+  private addDoctorUrl = "http://localhost:8081/add-doctor";
+  
   constructor(private httpClient: HttpClient) {
-   }
+  }
 
-   getDoctorsList(): Observable<Doctor[]> {
-     return this.httpClient.get<Doctor[]>(`${this.baseUrl}`);
-   }
+  getDoctorsList(): Observable<Doctor[]> {
+    return this.httpClient.get<Doctor[]>(`${this.baseUrl}`);
+  }
+
+  createDoctor(doctor: Doctor): Observable<Object> {
+     return this.httpClient.post(`${this.addDoctorUrl}`, doctor);
+  }
 }

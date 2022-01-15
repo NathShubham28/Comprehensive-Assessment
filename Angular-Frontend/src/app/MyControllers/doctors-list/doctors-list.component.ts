@@ -9,7 +9,6 @@ import { DoctorsService } from 'src/app/MyServices/doctors.service';
 })
 export class DoctorsListComponent implements OnInit {
   doctors: Doctor[];
-
   constructor(private doctorService: DoctorsService) {  }
 
   ngOnInit(): void {

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary px-4">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary px-4 shadow-sm sticky-lg-top">
   <div class="container-fluid">
     <a class="navbar-brand text-light pt-2" href="#">
       <h3>YOUR MEDIC</h3>
@@ -11,7 +11,7 @@
       <div id="navbarNav">
         <ul class="navbar-nav float-start">
           <li class="nav-item text-light ps-3">
-            <a class="nav-link text-light float-start" href="#">Admin</a>
+            <a class="nav-link text-light float-start" routerLink="/admin">Admin</a>
           </li>
           <li class="nav-item active ps-2">
             <a class="nav-link text-light" routerLink="/doctors-list" routerLinkActive="active">Doctors</a>
@@ -35,11 +35,7 @@
   </div>
 </nav>
 
-<!-- Home Page -->
-<div class="container-fluid p-0">
-  <img src="assets/Images/background.jpg" class="img-fluid w-100">
-</div>
 
-<div class="container">
+<div class="container-fluid p-0">
   <router-outlet></router-outlet>
 </div>

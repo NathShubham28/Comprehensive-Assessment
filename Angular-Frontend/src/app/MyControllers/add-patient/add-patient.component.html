@@ -1,0 +1,29 @@
+
+<h1 class="text-center text-decoration-underline my-5">Add a Patient</h1>
+<div class="container mx-auto">
+  <form (ngSubmit) = "onSubmit()" class="col-5 mx-auto">
+    <div class="form-group mb-2 row">
+      <label for="dmame" class="col-sm-4 col-form-label">Name</label>
+      <div class="col-sm-7">
+        <input type="email" class="form-control" name="pname" id="pname" placeholder="Full Name" [(ngModel)] ="patient.name">
+      </div>
+    </div>
+    <div class="form-group mb-2 row">
+      <label for="dateOfVisit" class="col-sm-4 col-form-label">Date of Visit</label>
+      <div class="col-sm-7">
+        <input type="date" class="form-control" name="dateOfVisit" id="dateOfVisit" [(ngModel)] ="patient.dateOfVisit" placeholder="Date of Visit">
+      </div>
+    </div>
+    <div class="form-group mb-2 row">
+      <label for="visitedDoctor" class="col-sm-4 col-form-label">Visited Doctor</label>
+      <div class="col-sm-7">
+        <select class="custom-select col-12 form-select" [(ngModel)]="patient.doctor" name="doctor">
+          <option *ngFor="let doctor of doctors" [value]="doctor" >{{doctor.name}}</option>
+        </select>
+      </div>
+    </div>
+      <div class="col-sm-4 mx-auto">
+        <button type="submit" class="btn btn-success">Add Patient</button>
+      </div>
+  </form>
+</div>
