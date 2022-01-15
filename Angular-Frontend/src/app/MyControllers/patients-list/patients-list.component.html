@@ -1,0 +1,20 @@
+<h1 class="text-center mt-2 text-decoration-underline text-danger">List of Patients</h1>
+<div class="container-fluid pt-5">
+  <table class="table table-striped">
+    <thead>
+      <th class="col-1 text-center">Id</th>
+      <th class="col-1 text-center">Name</th>
+      <th class="col-1 text-center">Date of Visit</th>
+      <th class="col-1 text-center">Visited Doctor</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let patient of patients">
+        <td class="text-center">{{patient.id}}</td>
+        <td class="text-center">{{patient.name}}</td>
+        <td class="text-center">{{patient.dateOfVisit}}</td>
+        <td class="text-center">{{patient.doctor.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

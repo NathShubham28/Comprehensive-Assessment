@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary px-4">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light pt-2" href="#">
+      <h3>YOUR MEDIC</h3>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <div id="navbarNav">
+        <ul class="navbar-nav float-start">
+          <li class="nav-item text-light ps-3">
+            <a class="nav-link text-light float-start" href="#">Admin</a>
+          </li>
+          <li class="nav-item active ps-2">
+            <a class="nav-link text-light" routerLink="/doctors-list" routerLinkActive="active">Doctors</a>
+          </li>
+          <li class="nav-item text-light ps-2">
+            <a class="nav-link text-light" routerLink="/patients-list" routerLinkActive="active">Patient</a>
+          </li>
+        </ul>
+      </div>
+      <div class="d-flex ms-auto">
+        <ul class="navbar-nav">
+          <li class="nav-item text-light">
+            <a class="nav-link text-light" href="#">About Us</a>
+          </li>
+          <li class="nav-item text-light">
+            <a class="nav-link text-light" href="#">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Home Page -->
+<div class="container-fluid p-0">
+  <img src="assets/Images/background.jpg" class="img-fluid w-100">
+</div>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
