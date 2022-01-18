@@ -1,7 +1,7 @@
 package com.HostipalManagement.REST_API.controller;
 //package org.junit;
-//import org.junit.*;
-//import static org.junit.Assert.assertNotNull;
+import org.junit.*;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
