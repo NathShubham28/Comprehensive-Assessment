@@ -1,5 +1,6 @@
 
 <h1 class="text-center text-decoration-underline my-5">Add a Patient</h1>
+
 <div class="container mx-auto">
   <form (ngSubmit) = "onSubmit()" class="col-5 mx-auto">
     <div class="form-group mb-2 row">
@@ -15,14 +16,27 @@
       </div>
     </div>
     <div class="form-group mb-2 row">
-      <label for="visitedDoctor" class="col-sm-4 col-form-label">Visited Doctor</label>
+      <label for="doctor" class="col-sm-4 col-form-label">Visited Doctor</label>
       <div class="col-sm-7">
-        <select class="custom-select col-12 form-select" [(ngModel)]="patient.doctor" name="doctor">
-          <option *ngFor="let doctor of doctors" [value]="doctor" >{{doctor.name}}</option>
+        <select class="custom-select col-12 form-select" [(ngModel)]="selected" name="docName"  (ngModelChange)='selectDoctor($event)'>
+          <option *ngFor="let doctor of doctors" [ngValue]="doctor">
+              {{doctor.name}}
+          </option>
         </select>
+        <!-- <div  ngbDropdown class="dropdown">
+          <label for="dropdownMenuButton1">Choose Doctor</label><br>
+            <button class="btn btn-secondary dropdown-toggle btn1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+              <span class="highlight" *ngIf="selected; else notSelected">{{select}}</span>
+              <ng-template #notSelected>{{select}}</ng-template>
+            </button>
+            <ul ngbDropdownMenu class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+              <li *ngFor="let doctor of doctors"><a class="dropdown-item" (click)="selectDoctor(doctor)" >{{doctor.name}}</a></li>
+            </ul>
+        </div>
+     -->
       </div>
     </div>
-      <div class="col-sm-4 mx-auto">
+      <div class="col-sm-4 pt-5 mx-auto">
         <button type="submit" class="btn btn-success">Add Patient</button>
       </div>
   </form>

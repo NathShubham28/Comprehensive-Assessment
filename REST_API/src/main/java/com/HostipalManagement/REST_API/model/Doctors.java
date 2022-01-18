@@ -41,6 +41,7 @@ public class Doctors {
 		this.name = name;
 		this.gender = gender;
 		this.specialization = specialization;
+		
 	}
 	
 	public int getId() {
@@ -80,6 +81,7 @@ public class Doctors {
 	}
 	
 	public List<Patients> getPatient() {
+		
 		return patient;
 	}
 }

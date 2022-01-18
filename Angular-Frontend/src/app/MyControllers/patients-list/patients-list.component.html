@@ -1,5 +1,31 @@
 <h1 class="text-center mt-2 text-decoration-underline text-danger">List of Patients</h1>
-<div class="container-fluid pt-5">
+
+<nav class="navbar navbar-light bg-light col-12 pt-3 d-flex">
+  <form class="form-inline d-flex mx-auto" (ngSubmit)="onSubmit()">
+    <input class="form-control mr-sm-2" type="search" [(ngModel)]="id" placeholder="Search by id" aria-label="Search" name="search">
+    <button class="btn btn-outline-success my-1 mx-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+
+<div class="details" *ngIf="selected && !errorMessage">
+  <div class="field d-flex">
+    <h4 class="col-2">Patient Name: </h4><span class="highlight"><h4 class=" text-secondary">{{patient.name}}</h4></span>
+  </div>
+  <div class="field d-flex">
+    <h4 class="col-2">Date of Visit: </h4><span class="highlight"><h4 class=" text-secondary">{{patient.dateOfVisit}}</h4></span>
+  </div>
+  <div class="field d-flex">
+    <h4 class="col-2">Doctor: </h4><span class="highlight"><h4 class=" text-secondary">{{doctor.name}}</h4></span>
+  </div>
+  <div class="field d-flex">
+    <h4 class="col-2">Specialization: </h4><span class="highlight"><h4 class=" text-secondary">{{doctor.specialization}}</h4></span>
+  </div>
+</div>
+<div class="w-100 d-flex" *ngIf="errorMessage">
+  <small class="mx-auto text-danger">No such patient is there in the database</small>
+</div>
+
+<div class="container-fluid pt-5" *ngIf="!selected">
   <table class="table table-striped">
     <thead>
       <th class="col-1 text-center">Id</th>

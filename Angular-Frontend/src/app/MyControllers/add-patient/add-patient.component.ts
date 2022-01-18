@@ -13,12 +13,14 @@ import { Patient } from 'src/app/patient';
 export class AddPatientComponent implements OnInit {
   patient: Patient = new Patient();
   doctors: Doctor[];
+  selected: Doctor;
   constructor(private doctorService: DoctorsService, private patientService: PatientsService, private router: Router) { }
 
   savePatient(){
-    this.patientService.createPatient(this.patient).subscribe(data =>{
+    this.patientService.createPatient(this.patient).subscribe(data =>{ 
       this.goToPatientList();
     });
+    
   }
 
   ngOnInit(): void {
@@ -37,9 +39,15 @@ export class AddPatientComponent implements OnInit {
 
   onSubmit(){
     console.log(this.patient);
+    this.savePatient();
   }
 
-  onSelect(doc: Doctor){
-    console.log(doc.id);
+  selectDoctor(doc: Doctor){
+    this.patient.doctor=doc;
+    console.log(doc);
+  }
+
+  patientId(){
+    return this.patient.id;
   }
 }

@@ -1,5 +1,30 @@
 <h1 class="text-center mt-2 text-decoration-underline text-danger">List of Doctors</h1>
-<div class="container-fluid pt-5">
+<div class="container d-flex">
+  <select class="custom-select w-25 mx-auto mt-5 form-select" [(ngModel)]="selected" name="docName" (ngModelChange)='selectDoctor($event)'>
+  <option *ngFor="let doctor of doctors" [ngValue]="doctor">
+      {{doctor.name}}
+  </option>
+</select>
+</div>
+<div class="container pt-5" *ngIf="selected">
+  <table class="table table-striped">
+    <thead>
+      <th class="col-1 text-center">Id</th>
+      <th class="col-1 text-center">Name</th>
+      <th class="col-1 text-center">Specialization</th>
+      <th class="col-1 text-center">No of patient attended</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-1 text-center">{{doctor.id}}</td>
+        <td class="col-1 text-center">{{doctor.name}}</td>
+        <td class="col-1 text-center">{{doctor.specialization}}</td>
+        <td class="col-1 text-center">{{count}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container-fluid pt-5" *ngIf="!selected">
   <table class="table table-striped">
     <thead>
       <th class="col-1 text-center">Id</th>
@@ -19,4 +44,5 @@
     </tbody>
   </table>
 </div>
+
 
